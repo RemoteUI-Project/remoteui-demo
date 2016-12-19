@@ -11,6 +11,16 @@
 	<name>remoteui-demo</name>
 	<description>Demo project for RemoteUI with Spring Boot</description>
 
+	<repositories>
+		<repository>
+			<id>remoteui-free-repository</id>
+			<url>http://repo.remoteui.org/free/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -73,12 +83,15 @@
 			<artifactId>jeval</artifactId>
 			<version>0.9.4</version>
 		</dependency>
-		<dependency>
+		
+		<!-- WebP is currently disabled as you need a JNI library for it -->
+		<!-- dependency>
 			<groupId>org.webp.imageio</groupId>
 			<artifactId>webp-imageio</artifactId>
 			<version>1.0.7</version>
 			<scope>compile</scope>
-		</dependency>
+		</dependency -->
+		
 	</dependencies>
 
 	<build>
