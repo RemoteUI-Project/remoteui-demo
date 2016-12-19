@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="ListViews" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<LinearLayout width="fill_parent" height="fill_parent">
+			<LinearLayout orientation="vertical" width="0dp"
+				layoutWeight="2" height="fill_parent">
+				<TextView backgroundColor="lightgray" padding="2mm" width="fill_parent"
+					fontSize="20" height="wrap_content" textColor="darkgray">
+					<text><![CDATA[Listviews display a scrollable list of items.]]></text>
+				</TextView>
+				<ListView width="fill_parent" height="fill_parent" items="#{listItems}"
+					onItemClicked="#{onItemClicked(index)}">
+					<Template>
+						<TextView text="#{item}" width="fill_parent" height="48dp"
+							textHorizontalAlign="center" textVerticalAlign="center" fontSize="16" />
+					</Template>
+				</ListView>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</RemoteUILayout>

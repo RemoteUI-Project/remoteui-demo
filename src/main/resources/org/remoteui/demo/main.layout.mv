@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<ScrollView width="fill_parent" height="fill_parent">
+		<LinearLayout orientation="vertical" height="fill_parent"
+			width="fill_parent" backgroundColor="white">
+			<LinearLayout width="fill_parent" backgroundColor="darkgray"
+				padding="10dp">
+				<TextView width="0dp" height="wrap_content" text="RemoteUI Demos"
+					layoutWeight="1" fontSize="35" textColor="white" paddingTop="5dp" />
+				<LinearLayout orientation="vertical">
+					<ImageView width="70dp" height="70dp" href="images/remoteui-logo.svg" />
+					<!-- TextView width="fill_parent" height="wrap_content" text="Ver. TODO"
+						fontSize="12" textColor="white" paddingTop="5dp"
+						textHorizontalAlign="center" paddingRight="10dp" / -->
+				</LinearLayout>
+			</LinearLayout>
+			<TextView width="fill_parent" text="Applications" fontSize="20"
+				textColor="white" backgroundColor="ruilight" padding="5dp" />
+
+			@code{
+			iconSize=((int)(client.viewportWidthDp/5-25)) + 'dp';
+			}
+
+			<LinearLayout width="fill_parent">
+				<LinearLayout width="0dp" layoutWeight="1" orientation="vertical"
+					padding="10dp">
+					<ImageButton href="apps/whoiswho/img/whoiswho-logo.svg"
+						padding="3dp" backgroundColor="transparent" height="@{iconSize}"
+						width="@{iconSize}" onClick="#{activity:whoiswho}" />
+					<TextView textHorizontalAlign="center" text="Who is Who"
+						width="@{iconSize}" />
+				</LinearLayout>
+				<LinearLayout width="0dp" layoutWeight="1" orientation="vertical"
+					padding="10dp">
+					<ImageButton href="images/scientific-calculator.svg"
+						padding="3dp" backgroundColor="transparent" height="@{iconSize}"
+						width="@{iconSize}" onClick="#{activity:scientificCalc}" />
+					<TextView textHorizontalAlign="center" text="Scientific Calc"
+						width="@{iconSize}" />
+				</LinearLayout>
+				<LinearLayout width="0dp" layoutWeight="1" orientation="vertical"
+					padding="10dp">
+					<ImageButton href="images/info-icon.svg" padding="3dp"
+						backgroundColor="transparent" height="@{iconSize}" width="@{iconSize}"
+						onClick="#{activity:clientInfo}" />
+					<TextView textHorizontalAlign="center" text="Client Info"
+						width="@{iconSize}" />
+				</LinearLayout>
+				<LinearLayout width="0dp" layoutWeight="1" orientation="vertical"
+					padding="10dp">
+					<ImageButton href="apps/contacts/img/contacts-icon.png"
+						padding="3dp" backgroundColor="transparent" height="@{iconSize}"
+						width="@{iconSize}" onClick="#{activity:contactsMaster}" />
+					<TextView textHorizontalAlign="center" text="Contacts"
+						width="@{iconSize}" />
+				</LinearLayout>
+			</LinearLayout>
+
+			<TextView width="fill_parent" text="Widgets" fontSize="20"
+				textColor="white" backgroundColor="ruilight" padding="5dp" />
+
+			<Button text="ImageViews" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:widget:imageViews}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="Buttons" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:widget:buttons}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="TextViews" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:widget:textViews}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="ImageButtons" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:widget:imageButtons}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="NPatch Images" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:widget:nPatch}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+			<Button text="Stateful Buttons" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:widget:statefulbuttons}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="EditText Views" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:widget:edittextviews}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="Checkboxes" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:widget:checkboxes}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="Selectboxes" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:widget:selectboxes}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="RadioButtons" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:widget:radiobuttons}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<!-- LAYOUTS -->
+
+			<TextView width="fill_parent" text="Layout &amp; Navigation"
+				fontSize="20" textColor="white" backgroundColor="ruilight" padding="5dp" />
+
+			<Button text="TableLayout" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:layout:tablelayout}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="ListViews" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:widget:listviews}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="Drawer Navigation" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:widget:drawer}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="ScrollView" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:widget:scrollView}" />
+
+			<!-- CHARTS -->
+
+			<TextView width="fill_parent" text="Charts" fontSize="20"
+				textColor="white" backgroundColor="ruilight" padding="5dp" />
+
+			<Button text="Line Chart" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:chart:linechart}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="Pie Chart" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:chart:piechart}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="Bar Chart" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:chart:barchart}" />
+
+			<!-- SPECIAL UI -->
+
+			<TextView width="fill_parent" text="Special UI" fontSize="20"
+				textColor="white" backgroundColor="ruilight" padding="5dp" />
+
+			<Button text="Maps" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:widget:maps}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="Custom Views" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:widget:customviews}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="VideoView" width="fill_parent" backgroundColor="white"
+				onClick="#{activity:widget:videoviews}" />
+
+			<!-- FRAMEWORK -->
+
+			<TextView width="fill_parent" text="Framework Functions"
+				fontSize="20" textColor="white" backgroundColor="ruilight" padding="5dp" />
+
+			<Button text="Internationalization" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:framework:i18n}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<Button text="Push Messaging" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:framework:push}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
+			<!-- Button text="Request Parameters" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:framework:request}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" / -->
+
+			<!-- Button text="Lifecycle Methods" width="fill_parent" backgroundColor="white" 
+				onClick="#{activity:framework:lifecycle}" / -->
+
+		</LinearLayout>
+	</ScrollView>
+</RemoteUILayout>

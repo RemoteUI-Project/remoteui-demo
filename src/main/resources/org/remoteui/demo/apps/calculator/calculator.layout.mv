@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<style href="calculator.css" />
+	<LinearLayout orientation="vertical" height="fill_parent"
+		backgroundColor="#2f2654" width="fill_parent">
+		<TextView marginLeft="5dp" marginRight="3dp" marginTop="10dp"
+			fontSize="40" textHorizontalAlign="right" marginBottom="10dp"
+			id="calculationView" width="fill_parent" text="#{calculation}"
+			padding="10dp" backgroundColor="lightgray" textColor="black"
+			textShadow="1dp 1dp 1.5dp #888" />
+
+		@if{ client.isLandscape}
+		@comment{ Introduce a horizontal layout, if we
+		are in Landscape mode }
+		<LinearLayout height="fill_parent" width="fill_parent">
+			<LinearLayout orientation="vertical" height="fill_parent"
+				layoutWeight="1">
+				@end{}
+
+				@comment{ Scientific Section }
+				<LinearLayout class="line scientific">
+					<Button text="log" onClick="#{append('log')}" />
+					<Button text="ln" onClick="#{append('ln')}" />
+					<Button text="ld" onClick="#{append('ld')}" />
+					<Button text="π" onClick="#{append('π')}" />
+					<Button text="e" onClick="#{append('e')}" />
+				</LinearLayout>
+				<LinearLayout class="line scientific">
+					<Button text="x²" onClick="#{append('²')}" />
+					<Button text="x³" onClick="#{append('³')}" />
+					<Button text="^" onClick="#{append('^')}" />
+					<Button text="√" onClick="#{append('√')}" />
+					<Button text="x√y" onClick="#{append('')}" />
+				</LinearLayout>
+				<LinearLayout class="line scientific">
+					<Button text="1/x" onClick="#{append('^-1')}" />
+					<Button text="zack" onClick="#{append('')}" />
+					<Button text="asin" onClick="#{append('asin')}" />
+					<Button text="acos" onClick="#{append('acos')}" />
+					<Button text="atan" onClick="#{append('atan')}" />
+				</LinearLayout>
+				<LinearLayout class="line scientific">
+					<Button text="(" onClick="#{append('(')}" />
+					<Button text=")" onClick="#{append(')')}" />
+					<Button text="sin" onClick="#{append('sin')}" />
+					<Button text="cos" onClick="#{append('cos')}" />
+					<Button text="tan" onClick="#{append('tan')}" />
+				</LinearLayout>
+
+
+				@if{ client.isLandscape}
+				@comment{ Put the basic section in another
+				vertical layout }
+			</LinearLayout>
+			<View width="15dp" />
+			<LinearLayout orientation="vertical" height="fill_parent"
+				layoutWeight="1.1">
+				@else{}
+				@comment{ Just leave some space }
+				<View height="15dp" />
+				@end{}
+
+				@comment{ Basic Section }
+				<LinearLayout class="line basic">
+					<Button text="7" onClick="#{append('7')}" />
+					<Button text="8" onClick="#{append('8')}" />
+					<Button text="9" onClick="#{append('9')}" />
+					<Button class="special" fontSize="25" text="DEL"
+						onClick="#{onBackSpace()}" />
+					<Button class="special" fontSize="25" text="AC"
+						onClick="#{onAcClicked()}" />
+				</LinearLayout>
+				<LinearLayout class="line basic">
+					<Button text="4" onClick="#{append('4')}" />
+					<Button text="5" onClick="#{append('5')}" />
+					<Button text="6" onClick="#{append('6')}" />
+					<Button text="x" onClick="#{append('x')}" />
+					<Button text="÷" onClick="#{append('/')}" />
+				</LinearLayout>
+				<LinearLayout class="line basic">
+					<Button text="1" onClick="#{append('1')}" />
+					<Button text="2" onClick="#{append('2')}" />
+					<Button text="3" onClick="#{append('3')}" />
+					<Button text="+" onClick="#{append('+')}" />
+					<Button text="-" onClick="#{append('-')}" />
+				</LinearLayout>
+				<LinearLayout class="line basic">
+					<Button text="0" onClick="#{append('0')}" />
+					<Button text="." onClick="#{append('.')}" />
+					<Button fontSize="20" text="EXP" onClick="#{append('E')}" />
+					<Button fontSize="22" text="Ans" onClick="#{onAnsClicked()}" />
+					<Button text="=" onClick="#{onEvaluate()}" />
+				</LinearLayout>
+
+				@if{ client.isLandscape}
+			</LinearLayout>
+		</LinearLayout>
+		@end{}
+
+	</LinearLayout>
+</RemoteUILayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<ScrollView width="fill_parent" backgroundColor="white">
+		<LinearLayout width="fill_parent" orientation="vertical">
+			<LinearLayout width="fill_parent">
+				<!-- TODO - layoutWeight does not work correctly -->
+				<LinearLayout width="0dp" layoutWeight="1" height="wrap_content"
+					orientation="vertical" padding="10dp">
+					<TextView text="#{person.firstName + ' ' + person.lastName}"
+						fontSize="20" />
+					<TextView marginTop="10dp" text="#{person.company}"
+						textColor="#203868" fontWeight="bold" fontSize="18" />
+					<TextView
+						text="#{person.address.street + ' ' + person.address.streetNumber}" />
+					<TextView text="#{person.address.zipCode + ' ' + person.address.town}" />
+					<TextView text="#{person.address.country}" />
+					<TextView marginTop="10dp" text="#{person.department}" />
+				</LinearLayout>
+
+				
+				@code{
+					imageWidth=client.viewportWidthPx/3; 
+					imageHeight=imageWidth*435/300
+				}
+				
+				<ImageView width="@{((int)(imageWidth)) +'px'}" 
+					height="@{((int)(imageHeight)) + 'px'}"
+					href="#{person.imageUrl}" />
+			</LinearLayout>
+
+			<TextView width="fill_parent" padding="3dp" text="Actions"
+				backgroundColor="#203868" textColor="white" />
+
+			<LinearLayout width="fill_parent">
+				<ImageButton width="52dp" height="52dp" onClick="#{onCall()}"
+					href="img/ic_call.svg" />
+				<LinearLayout width="fill_parent" orientation="vertical">
+
+					<!-- TODO android:gravity="center_vertical" textStyle="italic|bold" -->
+					<TextView width="fill_parent" fontWeight="bold"
+						text="Call" />
+
+					<!-- gravity="center_vertical" -->
+					<TextView width="fill_parent" text="#{person.phone}" />
+				</LinearLayout>
+			</LinearLayout>
+			<View height="1px" backgroundColor="#cccccc" />
+			<LinearLayout width="fill_parent">
+				<ImageButton width="52dp" height="52dp" onClick="#{onCallMobile()}"
+					href="img/ic_call_mobile.svg" />
+				<LinearLayout width="fill_parent" orientation="vertical">
+					<TextView width="fill_parent" fontWeight="bold" text="Call Mobile" />
+					<TextView width="fill_parent" text="#{person.mobile}" />
+				</LinearLayout>
+			</LinearLayout>
+			<View height="1px" backgroundColor="#cccccc" />
+			<LinearLayout width="fill_parent">
+				<ImageButton width="52dp" height="52dp" onClick="#{onSms()}"
+					href="img/ic_new_message.svg" />
+				<LinearLayout width="fill_parent" orientation="vertical">
+					<TextView width="fill_parent" fontWeight="bold" text="Send SMS" />
+					<TextView width="fill_parent" text="#{person.mobile}" />
+				</LinearLayout>
+			</LinearLayout>
+			<View height="1px" backgroundColor="#cccccc" />
+			<LinearLayout width="fill_parent">
+				<ImageButton width="52dp" height="52dp"
+					href="img/ic_email.svg" onClick="#{onEmail()}" />
+				<LinearLayout width="fill_parent" orientation="vertical">
+					<TextView width="fill_parent" fontWeight="bold" text="Send E-Mail" />
+					<TextView width="fill_parent" text="#{person.email}" />
+				</LinearLayout>
+			</LinearLayout>
+			<View height="1px" backgroundColor="#cccccc" />
+			<LinearLayout width="fill_parent">
+				<ImageButton width="52dp" height="52dp" onClick="#{onLocate()}"
+					href="img/ic_locate.svg" />
+				<LinearLayout width="fill_parent" orientation="vertical">
+
+					<!-- TODO android:gravity="center_vertical" textStyle="bold" -->
+					<TextView width="fill_parent" fontWeight="bold"
+						text="Display Visitor Address" />
+
+					<!-- gravity="center_vertical" -->
+					<TextView width="fill_parent"
+						text="#{person.address.street + ' ' + person.address.streetNumber + ', ' + person.address.zipCode + ' ' + person.address.town}" />
+				</LinearLayout>
+			</LinearLayout>
+
+			<TextView width="fill_parent" padding="3dp" text="Information"
+				backgroundColor="#203868" textColor="#ffffff" />
+
+			<TextView width="fill_parent" fontWeight="bold" paddingLeft="10dp"
+				text="Location" />
+
+			<TextView width="fill_parent" paddingLeft="10dp"
+				text="#{person.address.street + ' ' + person.address.streetNumber + ', ' + person.address.zipCode + ' ' + person.address.town}" />
+
+			<View height="1px" backgroundColor="#cccccc" />
+
+			<TextView width="fill_parent" fontWeight="bold" paddingLeft="10dp"
+				text="Location Abbreviated" />
+
+			<TextView width="fill_parent" paddingLeft="10dp"
+				text="#{person.locationCode}" />
+
+
+			<View height="1px" backgroundColor="#cccccc" />
+
+			<TextView width="fill_parent" fontWeight="bold" paddingLeft="10dp"
+				text="Contact Person" />
+
+			<TextView width="fill_parent" paddingLeft="10dp"
+				text="#{person.contactPerson}" />
+
+
+			<View height="1px" backgroundColor="#cccccc" />
+			<TextView width="fill_parent" paddingLeft="10dp" fontWeight="bold"
+				text="Cost Unit" />
+
+			<TextView width="fill_parent" paddingLeft="10dp"
+				text="#{person.costUnit}" />
+
+
+			<View height="1px" backgroundColor="#cccccc" />
+
+			<TextView width="fill_parent" paddingLeft="10dp" fontWeight="bold"
+				text="User ID" />
+
+			<TextView width="fill_parent" paddingLeft="10dp" text="#{person.userId}" />
+
+
+			<View height="1px" backgroundColor="#cccccc" />
+
+			<TextView width="fill_parent" paddingLeft="10dp" fontWeight="bold"
+				text="Working Area" />
+
+			<TextView width="fill_parent" paddingLeft="10dp"
+				text="#{person.areaOfWork}" />
+
+
+			<View height="1px" backgroundColor="#cccccc" />
+
+			<TextView width="fill_parent" paddingLeft="10dp" fontWeight="bold"
+				text="Last Updated" />
+
+			<TextView width="fill_parent" paddingLeft="10dp" text="#{person.lastUpdated.toString()}" />
+
+		</LinearLayout>
+	</ScrollView>
+</RemoteUILayout>

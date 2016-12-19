@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="ImageButtons" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout width="fill_parent" height="fill_parent">
+				<LinearLayout orientation="vertical" width="0dp"
+					padding="2mm" layoutWeight="1" height="fill_parent">
+					<ImageButton width="2cm" height="2cm"
+						onClick="#{showToast('ImageButtons are nice!', false)}" href="classpath:/org/remoteui/demo/images/remoteui-logo.svg" />
+					<ImageButton width="2cm" height="2cm" backgroundColor="transparent"
+						padding="5dp" href="classpath:/org/remoteui/demo/images/remoteui-logo.svg"
+						onClick="#{showToast('When they are transparent you click the image.', false)}" />
+				</LinearLayout>
+				<LinearLayout orientation="vertical" padding="2mm"
+					backgroundColor="lightgray" width="0dp" layoutWeight="1" height="fill_parent">
+					<TextView fontSize="20" height="fill_parent" textColor="darkgray">
+						<text>
+<![CDATA[
+<p>ImageButtons display an image instead of text.
+By default, an ImageButton looks like a regular Button,
+with the standard button background that changes color
+during different button states.</p>
+]]>
+						</text>
+					</TextView>
+				</LinearLayout>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<ScrollView width="fill_parent" height="fill_parent"
+		backgroundColor="white">
+		<LinearLayout orientation="vertical" width="fill_parent"
+			height="fill_parent">
+			<include href="../demos-header.layout.xml" />
+			<TextView width="fill_parent" text="Custom Widgets"
+				fontSize="20" textColor="white" backgroundColor="ruilight" padding="5dp" />
+			<LinearLayout width="fill_parent" height="fill_parent"
+				orientation="vertical">
+				@code{
+				width = client.viewportWidthPx;
+				height =
+				client.viewportHeightPx;
+				size = height>width? width+'px':height+'px';
+				}
+				<CustomView backgroundImage="img/speedometer.svg"
+					width="@{size}" height="@{size}" hrefScript="customview.mvel">
+					<Param name="handAngle" value="#{angle}" />
+					<Param name="title" value="Pressure" />
+				</CustomView>
+
+				<Button text="Randomize" width="fill_parent" height="wrap_content"
+					onClick="#{onButtonClicked()}" />
+
+				<TextView fontSize="20" height="fill_parent" padding="2mm"
+					backgroundColor="lightgray" textColor="darkgray">
+					<text>
+<![CDATA[
+<p>Create <b>Custom Views</b> with client-side scripting. You can program against a Canvas API to let the client render your specific widgets.</p>]]></text>
+				</TextView>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</RemoteUILayout>

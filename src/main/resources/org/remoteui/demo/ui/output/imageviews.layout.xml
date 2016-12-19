@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<style>
+	.image {padding: 3mm; width:25mm; height:25mm}
+	</style>
+	<LinearLayout orientation="vertical" width="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="ImageViews" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout orientation="vertical" width="wrap_content"
+				height="fill_parent">
+				<LinearLayout width="fill_parent">
+					<ImageView class="image" href="img/remoteui-logo.svg" />
+				</LinearLayout>
+				<LinearLayout width="fill_parent">
+					<ImageView class="image" href="img/android-phone.svg" />
+					<ImageView href="img/iphone.svg" />
+				</LinearLayout>
+				<LinearLayout width="fill_parent">
+					<ImageView class="image" href="img/svg-patches.svg#rectangles" />
+					<ImageView class="image" href="img/svg-patches.svg#circles" />
+				</LinearLayout>
+
+				<TextView fontSize="20" padding="2mm" backgroundColor="lightgray"
+					height="fill_parent" textColor="darkgray">
+					<text><![CDATA[<p>ImageViews support the following formats:</p>
+<p>- All <b>Java ImageIO</b> supported formats like JPEG, PNG, GIF or BMP (can be extended by 3rd-party libraries).</p>
+<p>- <b>SVG</b> with server-side rendering in the device's resolution<br/>(Supporting embedded glyphs, bitmaps etc.)</p>
+<p>The images are rendered on the server and transferred in PNG or WebP format.</p>]]></text>
+				</TextView>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

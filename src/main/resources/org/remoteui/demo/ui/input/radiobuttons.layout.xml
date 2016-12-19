@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		backgroundColor="white" height="fill_parent">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Checkboxes" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout width="fill_parent" height="wrap_content"
+				orientation="vertical">
+				<LinearLayout width="fill_parent" orientation="vertical"
+					backgroundColor="white" padding="2mm" height="wrap_content">
+					<TextView fontSize="20" text="#{decisionText}"
+						marginBottom="2mm" />
+					<RadioGroup orientation="vertical" value="#{decision}"
+						width="fill_parent">
+						<RadioButton fontSize="20" marginBottom="2mm" width="fill_parent"
+							value="#{org.remoteui.demo.ui.input.Decision.yes}" text="yes" />
+						<RadioButton fontSize="20" marginBottom="2mm" width="fill_parent"
+							value="#{org.remoteui.demo.ui.input.Decision.no}" text="no" />
+						<RadioButton fontSize="20" marginBottom="2mm" width="fill_parent"
+							value="#{org.remoteui.demo.ui.input.Decision.maybe}" text="maybe" />
+					</RadioGroup>
+					<View backgroundColor="gray" width="fill_parent" height="1dp"
+						margin="10dp" />
+					<RadioButton checked="#{singleButtonChecked}" text="Prefer Pizza"
+						width="fill_parent" fontSize="20" />
+					<Button text="Reset" onClick="#{reset()}" marginTop="10dp" />
+				</LinearLayout>
+				<TextView fontSize="20" padding="2mm" backgroundColor="lightgray"
+					height="fill_parent" textColor="darkgray">
+					<text>
+<![CDATA[Checkboxes allow binding the <b>checked</b> attribute to a boolean property as well as binding the RadioGroup's value to an enum. 
+They come with text that can be clicked as well.]]>
+						</text>
+				</TextView>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

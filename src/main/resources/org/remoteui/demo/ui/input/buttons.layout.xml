@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Buttons" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout width="fill_parent" height="fill_parent">
+				<LinearLayout orientation="vertical" width="0dp"
+					padding="2mm" layoutWeight="1" height="fill_parent">
+					<Button text="Simple Button" width="fill_parent" height="wrap_content"
+						onClick="#{showToast('Simple Button is great!', false)}" />
+					<Button text="Button with padding" padding="4mm" width="fill_parent"
+						height="wrap_content" onClick="#{showToast('Padding for buttons is great!', false)}" />
+					<Button text="Styled button" width="fill_parent"
+						backgroundColor="blue" height="wrap_content" textColor="white"
+						onClick="#{showToast('Stylomat!', false)}" />
+					<Button text="NPatched Button" width="fill_parent"
+						textColor="white" marginTop="5dp" backgroundImage="img/button.n.svg"
+						backgroundScale="1.5" height="wrap_content"
+						onClick="#{showToast('NPatches are stylish!', false)}" />
+				</LinearLayout>
+				<LinearLayout orientation="vertical" padding="2mm"
+					backgroundColor="lightgray" width="0dp" layoutWeight="1" height="fill_parent">
+					<TextView fontSize="18" height="fill_parent" textColor="darkgray">
+						<text>
+<![CDATA[
+<p>Every Button is styled using the system's default button background.
+You can however manipulate the look by changing the button's <b>backgroundImage</b>.</p>
+]]>
+						</text>
+					</TextView>
+				</LinearLayout>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

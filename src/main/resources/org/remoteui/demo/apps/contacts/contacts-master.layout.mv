@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	@code{
+	favoritesVisible=false;
+	isMobile = client.viewportWidthDp < 500;
+	isTablet = client.viewportWidthDp > 700;
+	margin= isMobile ? 16: 24;
+	cardWidth=client.viewportWidthDp > 610 ? 610 : client.viewportWidthDp;
+	numberOfFavs = isMobile?3:4;
+
+	favoriteTexts=['en_US' : 'FAVORITES',
+	'en_GB' : 'FAVOURITES', 'de_DE' : 'FAVORITEN'];
+	favoriteText=favoriteTexts[client.locale.toString()];
+
+	allContactsTexts=['en_US' : 'ALL CONTACTS', 'en_GB' : 'ALL CONTACTS',
+	'de_DE' : 'ALLE KONTAKTE'];
+	allContactsText=allContactsTexts[client.locale.toString()];
+
+	frequentlyTexts=['en_US' : 'Frequently contacted', 'en_GB' :
+	'Frequently contacted', 'de_DE' : 'Häufig kontaktiert'];
+	frequentlyText=frequentlyTexts[client.locale.toString()];
+
+	}
+	<style>
+		.card {
+			horizontalAlign:center;
+			paddingTop:5dp;
+			paddingBottom:10dp;
+			@if{!isTablet}
+				backgroundColor: white;
+				width:@{client.viewportWidthDp}dp;
+			@else{}
+				width:620dp;
+				marginRight:4dp;
+				marginLeft:4dp;
+   				backgroundImage:img/card-background.n.svg;
+			@end{}
+		}	
+		.itemText{
+			textColor:#252525; 
+			fontSize:18; 
+			verticalAlign:center;
+			marginLeft:@{margin}dp;
+		}
+		.itemLine{
+			height:72dp;
+			marginLeft:@{margin}dp;
+			marginRight:@{margin}dp;
+			width:fill_parent;
+		}
+		.tabs {
+			backgroundColor:ruilight;
+			width:fill_parent;
+			height:56dp;
+		}
+		.tabs > LinearLayout {
+			layoutWeight:1;
+			height:fill_parent;
+		}
+		.tabs > LinearLayout > Button {
+			textColor:white;
+			backgroundColor:transparent;
+			layoutWeight:1;
+			width:fill_parent;
+			textVerticalAlign:center;
+			textHorizontalAlign:center;
+		}
+		.tabs > LinearLayout > View {
+			height:3dp;
+		    backgroundColor:white;
+		    width:fill_parent;
+		    marginBottom:0.4dp;
+		}
+		.favorites > LinearLayout {
+			paddingTop:8dp;
+			marginLeft:@{margin}dp;
+			marginRight:@{margin}dp;
+		}
+		.favorites > LinearLayout > ImageButton {
+			width:@{cardWidth / numberOfFavs - 2*margin}dp;
+			backgroundColor:transparent;
+		}
+		.favorites > LinearLayout > TextView {
+			width:fill_parent;
+			textHorizontalAlign:center;
+			textVertialAlign:center;
+			fontSize:@{isMobile?14:18};
+			marginTop:8dp;
+			lines:1;
+		}
+	</style>
+	<!-- OptionsMenu>
+		<MenuItem title="Search"
+			icon="img/ic_search.svg" />
+		<MenuItem title="Contacts to display" />
+		<MenuItem title="Import/export" />
+		<MenuItem title="Accounts" />
+		<MenuItem title="Settings" />
+		<MenuItem title="Help" />
+	</OptionsMenu -->
+
+	<LinearLayout orientation="vertical" height="fill_parent"
+		width="fill_parent">
+		<LinearLayout class="tabs">
+			<LinearLayout orientation="vertical">
+				<Button text="@{favoriteText}" onClick="#{onTabClicked(true)}" />
+				<View visibility="#{favoritesVisible? 'visible':'invisible'}" />
+			</LinearLayout>
+			<LinearLayout orientation="vertical">
+				<Button text="@{allContactsText}" onClick="#{onTabClicked(false)}" />
+				<View visibility="#{favoritesVisible? 'invisible':'visible'}" />
+			</LinearLayout>
+		</LinearLayout>
+		<FrameLayout height="fill_parent" width="fill_parent">
+			<ScrollView width="fill_parent" height="fill_parent">
+				<LinearLayout class="card" orientation="vertical">
+
+					<!-- FAVORITES -->
+					<LinearLayout visibility="#{favoritesVisible?'visible':'gone'}"
+						class="favorites">
+						<LinearLayout orientation="vertical">
+							<ImageButton href="img/daniel-thommes-round.png"
+								onClick="#{activity:contactsDetail}" />
+							<TextView text="Daniel Thommes" />
+						</LinearLayout>
+					</LinearLayout>
+
+					<TextView text="@{frequentlyText}" textColor="ruilight"
+						visibility="#{favoritesVisible?'visible':'gone'}" marginLeft="@{margin}"
+						fontWeight="bold" marginTop="48dp" fontSize="20" />
+
+					<LinearLayout visibility="#{favoritesVisible?'visible':'gone'}"
+						orientation="vertical" height="fill_parent">
+						<LinearLayout class="itemLine">
+							<ImageView width="40dp" height="40dp" verticalAlign="center"
+								href="img/daniel-thommes-round.png" />
+							<Button backgroundColor="transparent" text="Daniel Thommes"
+								class="itemText" onClick="#{activity:contactsDetail}" />
+						</LinearLayout>
+					</LinearLayout>
+
+
+					<!-- ALL CONTACTS -->
+					<LinearLayout visibility="#{favoritesVisible?'gone':'visible'}"
+						orientation="vertical" height="fill_parent">
+						<LinearLayout class="itemLine">
+							<TextView text="D" fontSize="32" verticalAlign="center"
+								textColor="#999" marginLeft="@{isMobile?0:8}" width="56dp" />
+							<ImageView width="40dp" height="40dp" verticalAlign="center"
+								href="img/daniel-thommes-round.png" />
+							<Button backgroundColor="transparent" text="Daniel Thommes"
+								class="itemText" onClick="#{activity:contactsDetail}" />
+						</LinearLayout>
+					</LinearLayout>
+				</LinearLayout>
+			</ScrollView>
+
+			<!-- FLOATING BUTTON -->
+			<ImageButton marginRight="@{margin}" marginBottom="24dp"
+				width="62dp" height="62dp" paddingLeft="15dp" paddingRight="21dp"
+				paddingBottom="14dp"
+				href="img/ic_person_add.svg"
+				backgroundImage="img/elevated-button-background.svg" verticalAlign="bottom"
+				horizontalAlign="right" onClick="#{activity:contactsNew}" />
+		</FrameLayout>
+	</LinearLayout>
+</RemoteUILayout>

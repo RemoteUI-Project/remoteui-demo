@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+
+	<Drawer position="left">
+		<ScrollView width="200dp" height="fill_parent">
+			<LinearLayout width="fill_parent" height="fill_parent"
+				orientation="vertical" backgroundColor="white">
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 0" onClick="#{onItemSelected('Item 0')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 1" onClick="#{onItemSelected('Item 1')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 2" onClick="#{onItemSelected('Item 2')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 3" onClick="#{onItemSelected('Item 3')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 4" onClick="#{onItemSelected('Item 4')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 5" onClick="#{onItemSelected('Item 5')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 6" onClick="#{onItemSelected('Item 6')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 7" onClick="#{onItemSelected('Item 7')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 8" onClick="#{onItemSelected('Item 8')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 9" onClick="#{onItemSelected('Item 9')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 10" onClick="#{onItemSelected('Item 10')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 11" onClick="#{onItemSelected('Item 11')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 12" onClick="#{onItemSelected('Item 12')}" />
+				<Button width="fill_parent" backgroundColor="transparent"
+					text="Item 13" onClick="#{onItemSelected('Item 13')}" />
+			</LinearLayout>
+		</ScrollView>
+	</Drawer>
+
+	<LinearLayout orientation="vertical" width="fill_parent">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Drawer Navigation"
+			fontSize="20" textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout orientation="vertical" backgroundColor="lightgray"
+				width="fill_parent" height="fill_parent">
+				<TextView padding="2mm" width="fill_parent"
+					textHorizontalAlign="right" backgroundColor="white" fontSize="20"
+					text="#{contentText}" />
+				<TextView padding="2mm" fontSize="18" height="fill_parent"
+					textColor="darkgray">
+					<text>
+<![CDATA[
+<p>Define a side-panel or <b>drawer</b> containing arbitrary content typically used for navigation.</p>
+<p><b>←</b> Slide in the drawer from the left!</p>
+]]>
+					</text>
+				</TextView>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

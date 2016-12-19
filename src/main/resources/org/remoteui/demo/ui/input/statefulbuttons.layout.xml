@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Stateful Buttons"
+			fontSize="20" textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout width="fill_parent" height="fill_parent"
+				orientation="vertical">
+				<LinearLayout width="fill_parent" padding="2mm"
+					height="wrap_content">
+					<Button width="2cm" height="2cm" fontSize="30"
+						backgroundImage="img/alertbutton.states.xml" />
+					<Button marginLeft="2mm" width="2cm" height="2cm" fontSize="30"
+						enabled="false" backgroundImage="img/alertbutton.states.xml" />
+				</LinearLayout>
+				<LinearLayout padding="2mm" backgroundColor="lightgray"
+					orientation="vertical" width="fill_parent">
+					<TextView fontSize="20" height="fill_parent" textColor="darkgray">
+						<text>
+<![CDATA[Stateful Buttons are styled with special background images that offer rich capabilities for visualizing the state of your button.
+You can define the look of all states e.g. in one SVG file:]]>
+						</text>
+					</TextView>
+					<ImageView href="img/alertbutton.svg" width="3cm"
+						height="3cm" />
+				</LinearLayout>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

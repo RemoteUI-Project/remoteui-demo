@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<ScrollView width="fill_parent" height="fill_parent" backgroundColor="white">
+		<LinearLayout orientation="vertical" width="fill_parent"
+			height="fill_parent">
+			<include href="../demos-header.layout.xml" />
+			<TextView width="fill_parent" text="ChartViews" fontSize="20"
+				textColor="white" backgroundColor="ruilight" padding="5dp" />
+			<LinearLayout width="fill_parent" height="fill_parent"
+				orientation="vertical">
+				<Button text="Line Chart" width="fill_parent"
+					backgroundColor="white" onClick="#{activity:chart:linechart}" />
+				<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</RemoteUILayout>

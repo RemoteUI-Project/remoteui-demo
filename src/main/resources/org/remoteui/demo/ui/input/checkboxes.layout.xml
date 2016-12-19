@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Checkboxes" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout width="fill_parent" height="fill_parent"
+				orientation="vertical">
+				<LinearLayout width="fill_parent" orientation="vertical"
+					padding="2mm" height="wrap_content">
+					<TextView padding="1mm" fontSize="24" fontWeight="bold"
+						fontStyle="italic" text="#{text}" />
+					<CheckBox padding="1mm" fontSize="20" checked="#{likePizza}"
+						text="I like Pizza" />
+					<CheckBox padding="1mm" fontSize="20" checked="#{likeSpaghetti}"
+						text="I like Spaghetti" />
+					<CheckBox padding="1mm" fontSize="20" checked="#{likeLasagne}"
+						text="I like Lasagne" />
+				</LinearLayout>
+				<LinearLayout padding="2mm" backgroundColor="lightgray"
+					orientation="vertical" width="fill_parent">
+					<TextView fontSize="20" height="fill_parent" textColor="darkgray">
+						<text>
+<![CDATA[Checkboxes allow binding the <b>checked</b> attribute to a boolean property. They come with text that can be clicked as well.]]>
+						</text>
+					</TextView>
+				</LinearLayout>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

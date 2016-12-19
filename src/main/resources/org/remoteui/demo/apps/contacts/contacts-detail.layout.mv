@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	@code{
+	isMobile = client.viewportWidthDp < 500;
+	margin= isMobile ? 16 :
+	24;
+	isDe = (client.locale.language == 'de');
+	}
+	<style> 
+		.card {
+			paddingTop:5dp;
+			paddingBottom:10dp;
+   			backgroundImage:img/card-background.n.svg;
+			marginRight:4dp;
+			marginLeft:4dp;
+			marginTop:8dp;
+		}	
+		.itemText{textColor:#252525; fontSize:18;}
+		.itemSubText{textColor:#747474; marginTop:2dp;}
+		.divider{
+			height:1dp;
+			marginLeft:@{56+margin}dp;
+			marginRight:@{isMobile?0:4}dp;
+			width:fill_parent;
+			backgroundColor:#e5e5e5;
+		}
+		.dividerAbout{
+			height:1dp;
+			marginLeft:@{margin}dp;
+			marginRight:@{isMobile?0:4}dp;
+			width:fill_parent;
+			backgroundColor:#e5e5e5;
+		}
+		.icon1{
+			width:18dp;
+			height:18dp;
+			marginRight:14dp;
+			verticalAlign:center;
+		}
+		.icon2{
+			padding:14dp;
+			width:48dp;
+			height:48dp;
+			verticalAlign:center;
+			backgroundColor:transparent;
+		}
+		.itemLine{
+			height:72dp;
+			marginLeft:@{margin}dp;
+			marginRight:@{margin}dp;
+			width:fill_parent;
+		}
+	</style>
+	<!-- OptionsMenu>
+		<MenuItem title="Search"
+			icon="img/ic_search.svg" />
+		<MenuItem title="Contacts to display" />
+		<MenuItem title="Import/export" />
+		<MenuItem title="Accounts" />
+		<MenuItem title="Settings" />
+		<MenuItem title="Help" />
+	</OptionsMenu -->
+
+	@code{
+	cardWidth=client.viewportWidthDp > 610 ? 610 :
+	client.viewportWidthDp;
+	}
+
+	<ScrollView width="fill_parent" height="fill_parent"
+		backgroundColor="darkgray">
+		<LinearLayout width="@{cardWidth}dp" horizontalAlign="center"
+			orientation="vertical" backgroundColor="#f4f4f4" height="fill_parent">
+			<FrameLayout width="fill_parent">
+				<ImageView width="@{cardWidth}dp" height="@{cardWidth}dp"
+					href="img/daniel-thommes-large.jpg" />
+				<TextView text="Daniel Thommes" verticalAlign="bottom"
+					textColor="white" fontSize="36" margin="@{margin}" />
+				<LinearLayout horizontalAlign="right" marginRight="8dp"
+					marginTop="8dp">
+					<ImageView width="48dp" height="48dp" padding="12dp"
+						href="img/ic_star_outline.svg" />
+					<ImageView width="48dp" height="48dp" padding="12dp"
+						href="img/ic_mode_edit.svg" />
+					<ImageView width="48dp" height="48dp" padding="12dp"
+						href="img/ic_more_vert.svg" />
+				</LinearLayout>
+			</FrameLayout>
+
+			<!-- Contact Card -->
+			<LinearLayout class="card" orientation="vertical" width="fill_parent">
+				<!-- mobile -->
+				<LinearLayout class="itemLine">
+					<ImageView class="icon1" href="img/ic_call.svg" />
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						marginLeft="24dp" width="0dp" layoutWeight="1">
+						<TextView class="itemText" text="+491797389529" />
+						<TextView text="@{isDe?'Mobil':'Mobile'}" class="itemSubText" />
+					</LinearLayout>
+					<ImageButton class="icon2" backgroundColor="transparent"
+						href="img/ic_message.svg" />
+				</LinearLayout>
+				<View class="divider" />
+				<!-- phone work -->
+				<LinearLayout class="itemLine">
+					<View class="icon1" />
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						marginLeft="24dp" width="0dp" layoutWeight="1">
+						<TextView class="itemText" text="+4971189232757" />
+						<TextView text="@{isDe?'Arbeit':'Work'}" class="itemSubText" />
+					</LinearLayout>
+					<ImageButton class="icon2" href="img/ic_message.svg" />
+				</LinearLayout>
+				<View class="divider" />
+				<!-- email-work -->
+				<LinearLayout class="itemLine">
+					<ImageView class="icon1" href="img/ic_email.svg" />
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						marginLeft="24dp" width="fill_parent">
+						<TextView class="itemText" text="thommes@hdm-stuttgart.de" />
+						<TextView class="itemSubText" text="@{isDe?'Arbeit':'Work'}" />
+					</LinearLayout>
+				</LinearLayout>
+				<View class="divider" />
+				<!-- email-home -->
+				<LinearLayout class="itemLine">
+					<View class="icon1" />
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						marginLeft="24dp" width="fill_parent">
+						<TextView class="itemText" text="mail@danielthommes.de" />
+						<TextView class="itemSubText" text="@{isDe?'Privat':'Home'}" />
+					</LinearLayout>
+				</LinearLayout>
+				<View class="divider" />
+				<!-- location work -->
+				<LinearLayout class="itemLine">
+					<ImageView class="icon1" href="img/ic_place.svg" />
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						marginLeft="24dp" width="0dp" layoutWeight="1">
+						<TextView class="itemText" text="Nobelstr. 5, 70569 Stuttgart, Germany" />
+						<TextView class="itemSubText" text="@{isDe?'Arbeit':'Work'}" />
+					</LinearLayout>
+					<ImageButton class="icon2" href="img/ic_directions.svg" />
+				</LinearLayout>
+				<View class="divider" />
+				<!-- location home -->
+				<LinearLayout class="itemLine">
+					<View class="icon1" />
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						marginLeft="24dp" width="0dp" layoutWeight="1">
+						<TextView class="itemText"
+							text="Böblinger Str. 55, 70199 Stuttgart, Germany" />
+						<TextView class="itemSubText" text="@{isDe?'Privat':'Home'}" />
+					</LinearLayout>
+					<ImageButton class="icon2" href="img/ic_directions.svg" />
+				</LinearLayout>
+			</LinearLayout>
+
+			<!-- About Card -->
+			<LinearLayout class="card" marginBottom="@{isMobile?4:8}"
+				marginTop="@{isMobile?4:0}" orientation="vertical" width="fill_parent">
+				<TextView class="itemLine" height="56dp" fontSize="18"
+					textColor="ruilight" textVerticalAlign="center" fontWeight="bold"
+					text="@{isDe?'Über':'About'} Daniel" />
+				<View class="dividerAbout" marginLeft="4dp" />
+				<LinearLayout class="itemLine">
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						width="0dp" layoutWeight="1">
+						<TextView class="itemText" text="@{isDe?'Spitzname':'Nickname'}" />
+						<TextView text="Dani" class="itemSubText" />
+					</LinearLayout>
+				</LinearLayout>
+				<View class="dividerAbout" />
+				<LinearLayout class="itemLine">
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						width="0dp" layoutWeight="1">
+						<TextView class="itemText" text="@{isDe?'Webseite':'Website'}" />
+						<TextView text="http://www.remoteui.org" class="itemSubText" />
+					</LinearLayout>
+				</LinearLayout>
+				<View class="dividerAbout" />
+				<LinearLayout class="itemLine">
+					<LinearLayout orientation="vertical" verticalAlign="center"
+						width="0dp" layoutWeight="1">
+						<TextView class="itemText" text="Organisation" />
+						<TextView text="Stuttgart Media University" class="itemSubText" />
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</RemoteUILayout>

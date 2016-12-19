@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="EditTextViews" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout orientation="vertical" width="fill_parent"
+				backgroundColor="lightgray">
+				<LinearLayout width="fill_parent" orientation="vertical"
+					backgroundColor="white" padding="10dp">
+					<TextView width="fill_parent" fontStyle="italic" fontSize="20"
+						text="#{standardText}" textHorizontalAlign="right" />
+					<EditTextView hint="Standard" keyboardType="standard"
+						fontSize="20" text="#{standardText}" width="fill_parent" />
+					<EditTextView hint="Number" keyboardType="number"
+						fontSize="20" text="#{number}" width="fill_parent" />
+					<EditTextView hint="URI" keyboardType="uri" fontSize="20"
+						text="#{uri}" width="fill_parent" />
+					<EditTextView hint="Email Address" keyboardType="email"
+						fontSize="20" text="#{email}" width="fill_parent" />
+					<EditTextView hint="Phone Number" keyboardType="phone"
+						fontSize="20" text="#{phone}" width="fill_parent" />
+					<EditTextView hint="Date" keyboardType="date"
+						fontSize="20" text="#{date}" width="fill_parent" />
+					<EditTextView hint="Time" keyboardType="time"
+						fontSize="20" text="#{time}" width="fill_parent" />
+					<EditTextView hint="Date &amp; Time" keyboardType="datetime"
+						fontSize="20" text="#{dateAndTime}" width="fill_parent" />
+					<EditTextView hint="Person Name" keyboardType="person"
+						fontSize="20" text="#{personName}" width="fill_parent" />
+
+					<EditTextView text="#{personName}"
+						hint="EditTextView with 3 lines height and 5 lines maxHeight"
+						fontSize="20" lines="3" maxLines="5" textVerticalAlign="top"
+						width="fill_parent" />
+				</LinearLayout>
+
+				<TextView fontSize="20" padding="2mm" textColor="darkgray">
+					<text><![CDATA[<p>EditTextViews support the input of textual or numerical data. 
+					You can determine the keyboard type, a hint and more.</p>]]></text>
+				</TextView>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

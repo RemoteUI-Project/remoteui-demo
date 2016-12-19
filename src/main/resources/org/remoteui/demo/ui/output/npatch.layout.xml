@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="N-Patch Images" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout width="fill_parent" height="wrap_content"
+				orientation="vertical">
+				<LinearLayout orientation="vertical" width="fill_parent"
+					backgroundColor="lightgray" padding="2mm" height="fill_parent">
+					<TextView padding="3mm" paddingBottom="0mm"
+						backgroundImage="img/paper-background.n.svg" backgroundScale="0.2">
+						<text>
+<![CDATA[
+<h2><font face="serif">A Little Cloud</font></h2>
+<p><font face="serif"><i>by James Joyce</i></font></p>
+<p><font face="serif">Eight years before he had seen his friend off at the North Wall and wished him
+God-speed. Gallaher had got on. You could tell that at once by his travelled air,
+his well-cut tweed suit, and fearless accent. Few fellows had talents like his,
+and fewer still could remain unspoiled by such success. Gallaher's heart was in
+the right place and he had deserved to win. It was something to have a friend
+like that.</font></p>
+]]>
+						</text>
+					</TextView>
+					<TextView marginTop="2mm" padding="3mm" paddingBottom="0mm"
+						backgroundImage="img/svgpatched.n.svg" backgroundScale="1">
+						<text>
+<![CDATA[
+<h2><font face="serif">A Little Cloud</font></h2>
+<p><font face="serif"><i>by James Joyce</i></font></p>
+<p><font face="serif">Eight years before he had seen his friend off at the North Wall and wished him
+God-speed. Gallaher had got on. You could tell that at once by his travelled air,
+his well-cut tweed suit, and fearless accent. Few fellows had talents like his,
+and fewer still could remain unspoiled by such success. Gallaher's heart was in
+the right place and he had deserved to win. It was something to have a friend
+like that.</font></p>
+]]>
+						</text>
+					</TextView>
+				</LinearLayout>
+				<LinearLayout orientation="vertical" padding="2mm"
+					backgroundColor="lightgray" width="fill_parent" height="wrap_content">
+					<TextView fontSize="20" height="wrap_content" textColor="darkgray">
+						<text>
+<![CDATA[
+<p>Define N-Patch images in SVG by marking stretch areas that are interpreted by RemoteUI's SVG converter:</p>
+]]>
+						</text>
+					</TextView>
+					<LinearLayout>
+						<ImageView href="img/paper-background.svg" width="2cm"
+							height="2cm" />
+
+						<ImageView href="img/svgpatched.svg" width="2cm" height="2cm" />
+					</LinearLayout>
+					<TextView marginTop="2mm" fontSize="20" height="wrap_content"
+						textColor="darkgray">
+						<text>
+<![CDATA[
+<p>Use these images as background for your widgets. They scale up by stretching the marked areas.</p>
+]]>
+						</text>
+					</TextView>
+				</LinearLayout>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

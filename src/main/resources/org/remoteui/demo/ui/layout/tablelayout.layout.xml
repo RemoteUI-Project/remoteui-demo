@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<style>
+		.odd {backgroundColor:lightgray}
+		TableRow > TextView {textHorizontalAlign:center; padding:15dp}
+	</style>
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="classpath:/org/remoteui/demo/ui/demos-header.layout.xml" />
+		<TextView width="fill_parent" text="TableLayout" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+
+			<TableLayout width="fill_parent" stretchColumns="0 1 2">
+				<TableRow backgroundColor="#444">
+					<TextView text="Item" fontWeight="bold" fontSize="16"
+						textColor="white" />
+					<TextView text="Quantity" fontWeight="bold" fontSize="18"
+						textColor="white" />
+					<TextView text="Price" fontWeight="bold" fontSize="18"
+						textColor="white" />
+				</TableRow>
+				<TableRow class="odd">
+					<TextView text="Value 1" fontWeight="bold" />
+					<TextView text="2" />
+					<TextView text="100.00 $" />
+				</TableRow>
+				<TableRow>
+					<TextView text="Value 2" fontWeight="bold" />
+					<TextView text="1" />
+					<TextView text="200.00 $" />
+				</TableRow>
+				<TableRow class="odd">
+					<TextView text="Value 4" fontWeight="bold" />
+					<TextView text="5" />
+					<TextView text="100.00 $" />
+				</TableRow>
+				<TableRow>
+					<TextView text="Value 5" fontWeight="bold" />
+					<TextView text="1" />
+					<TextView text="150.00 $" />
+				</TableRow>
+				<TableRow class="odd">
+					<TextView text="Value 6" fontWeight="bold" />
+					<TextView text="2" />
+					<TextView text="160.00 $" />
+				</TableRow>
+				<View backgroundColor="black" height="1dp" width="fill_parent" />
+				<TableRow>
+					<TextView text="SUM" fontWeight="bold" />
+					<TextView text="1" />
+					<TextView text="710.00 $" />
+				</TableRow>
+
+				<TableRow>
+					<TextView text="Shipping" fontWeight="bold"
+						tableColumnSpan="2" textHorizontalAlign="right" marginRight="10dp" />
+					<TextView text="1.80 €" />
+				</TableRow>
+				<TableRow>
+					<TextView tableColumn="2" text="711.80 $" />
+				</TableRow>
+			</TableLayout>
+
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

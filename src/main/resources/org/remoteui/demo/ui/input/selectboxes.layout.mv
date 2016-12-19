@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="SelectBoxes" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<LinearLayout width="fill_parent" height="fill_parent">
+			<LinearLayout orientation="vertical" width="0dp"
+				layoutWeight="2" height="fill_parent">
+				<TextView backgroundColor="lightgray" padding="2mm"
+					fontSize="20" height="wrap_content" textColor="darkgray">
+					<text><![CDATA[SelectBoxes can either contain a static list of items or bind to a list of values at runtime.]]></text>
+				</TextView>
+				<SelectBox width="fill_parent" height="wrap_content"
+					onItemSelected="#{onItemSelected(index)}">
+					<Item>Spaghetti</Item>
+					<Item>Regatoni</Item>
+					<Item>Lasagne</Item>
+					<Item>Linguine</Item>
+					<Item>Ravioli</Item>
+					<Item>Tortellini</Item>
+					<Item>Farfalle</Item>
+					<Item>Capelletti</Item>
+				</SelectBox>
+				<!-- Selectbox from variables defined by TemplateVariableProvider in 
+					Spring context -->
+				<SelectBox width="fill_parent" height="wrap_content" items="#{selectBoxItems}"
+					onItemSelected="#{onOtherItemSelected(index)}">
+				</SelectBox>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</RemoteUILayout>

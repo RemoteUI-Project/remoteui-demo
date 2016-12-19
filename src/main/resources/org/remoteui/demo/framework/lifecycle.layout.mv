@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<style> .content > TextView{fontSize:18; padding:10dp}</style>
+	<LinearLayout orientation="vertical" width="fill_parent">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Lifecycle" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout class="content" orientation="vertical"
+				width="fill_parent" height="fill_parent">
+				<EditTextView width="fill_parent" text="#{message}"
+					padding="10dp" />
+				<Button text="Show Message" onClick="#{onShowClicked()}" />
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="ScrollViews" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<LinearLayout width="fill_parent" height="fill_parent">
+			<LinearLayout orientation="vertical" width="0dp"
+				layoutWeight="2" height="fill_parent">
+				<TextView backgroundColor="lightgray" padding="2mm"
+					fontSize="20" height="wrap_content" textColor="darkgray">
+					<text><![CDATA[Due to native rendering RemoteUI's ScrollViews scroll <b>smooth</b> like butter.]]></text>
+				</TextView>
+				<ScrollView>
+					<TextView backgroundColor="white" textColor="black"
+						padding="3mm" fontSize="18">
+						<text>
+<![CDATA[
+
+<h2><font face="serif">A Little Cloud</font></h2>
+<p><font face="serif"><i>by James Joyce</i></font></p>
+<p><font face="serif">Eight years before he had seen his friend off at the North Wall and wished him
+God-speed. Gallaher had got on. You could tell that at once by his travelled air,
+his well-cut tweed suit, and fearless accent. Few fellows had talents like his,
+and fewer still could remain unspoiled by such success. Gallaher's heart was in
+the right place and he had deserved to win. It was something to have a friend
+like that.</font></p>
+
+<p><font face="serif">Little Chandler's thoughts ever since lunch-time had been of his meeting with
+Gallaher, of Gallaher's invitation, and of the great city London where Gallaher
+lived. He was called Little Chandler because, though he was but slightly under
+the average stature, he gave one the idea of being a little man. His hands were
+white and small, his frame was fragile, his voice was quiet and his manners were
+refined.<br/>
+He took the greatest care of his fair silken hair and moustache, and used perfume
+discreetly on his handkerchief. The half-moons of his nails were perfect, and
+when he smiled you caught a glimpse of a row of childish white teeth.</font></p>
+
+<p><font face="serif">As he sat at his desk in the King's Inns he thought what changes those eight
+years had brought. The friend whom he had known under a shabby and necessitous
+guise had become a brilliant figure on the London Press. He turned often from
+his tiresome writing to gaze out of the office window. The glow of a late autumn
+sunset covered the grass plots and walks. It cast a shower of kindly golden dust
+on the untidy nurses and decrepit old men who drowsed on the benches; it flickered
+upon all the moving figures - on the children who ran screaming along the gravel
+paths and on everyone who passed through the gardens. He watched the scene and
+thought of life; and (as always happened when he thought of life) he became sad.
+A gentle melancholy took possession of him. He felt how useless it was to struggle
+against fortune, this being the burden of wisdom which the ages had bequeathed
+to him.</font></p>
+
+<p><font face="serif">He remembered the books of poetry upon his shelves at home. He had bought
+them in his bachelor days and many an evening, as he sat in the little room off
+the hall, he had been tempted to take one down from the bookshelf and read out
+something to his wife. But shyness had always held him back; and so the books
+had remained on their shelves. At times he repeated lines to himself and this
+consoled him.</font></p>
+
+<p><font face="serif">When his hour had struck he stood up and took leave of his desk and of his
+fellow-clerks punctiliously. He emerged from under the feudal arch of the King's
+Inns, a neat modest figure, and walked swiftly down Henrietta Street. The golden
+sunset was waning and the air had grown sharp. A horde of grimy children populated
+the street. They stood or ran in the roadway, or crawled up the steps before the
+gaping doors, or squatted like mice upon the thresholds. Little Chandler gave
+them no thought. He picked his way deftly through all that minute vermin-like
+life and under the shadow of the gaunt spectral mansions in which the old nobility
+of Dublin had roistered. No memory of the past touched him, for his mind was
+full of a present joy.<br/>
+...</font></p>]]>
+					</text>
+					</TextView>
+				</ScrollView>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</RemoteUILayout>

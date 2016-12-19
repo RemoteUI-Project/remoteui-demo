@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statefulImage xmlns="urn:remoteui:org:statefulimage">
+	<image state="enabled" href="alertbutton.svg#enabled" />
+	<image state="disabled" href="alertbutton.svg#disabled" />
+	<image state="focused" href="alertbutton.svg#focused" />
+	<image state="hovered" href="alertbutton.svg#focused" />
+	<image state="pressed" href="alertbutton.svg#pressed" />
+</statefulImage>

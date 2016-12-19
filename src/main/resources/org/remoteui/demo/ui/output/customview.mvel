@@ -1,0 +1,71 @@
+import android.graphics.Color;
+import android.graphics.Paint;
+
+/*************************************************************
+ * Speedometer
+ *************************************************************/
+/* Drawing Paths in Scaled mode is only supported by Software */
+setLayerType(android.view.View.LAYER_TYPE_SOFTWARE, null);
+
+mTextPaint = new Paint();
+mTextPaint.setAntiAlias(true);
+mTextPaint.setColor(Color.WHITE);
+mTextPaint.setTextAlign(Paint.Align.CENTER);
+
+handPaint = new Paint();
+handPaint.setAntiAlias(true);
+handPaint.setColor(Color.WHITE);
+handPaint.setStyle(Paint.Style.FILL);
+handPaint.setShadowLayer(0.01f, -0.005f, -0.005f, 0x7f000000);
+
+handPath = new Path();
+handPath.moveTo(0.5f, 0.5f + 0.2f);
+handPath.lineTo(0.5f - 0.010f, 0.5f + 0.2f - 0.007f);
+handPath.lineTo(0.5f - 0.002f, 0.5f - 0.32f);
+handPath.lineTo(0.5f + 0.002f, 0.5f - 0.32f);
+handPath.lineTo(0.5f + 0.010f, 0.5f + 0.2f - 0.007f);
+handPath.lineTo(0.5f, 0.5f + 0.2f);
+handPath.addCircle(0.5f, 0.5f, 0.025f, Path.Direction.CW);
+
+angle = 0;
+handAngle = 0;
+
+/*************************************************************
+ * Methods 
+ *************************************************************/
+def onAttachedToWindow() {
+	/*restart animation*/
+	angle = 0;
+}
+
+def onDraw(canvas) { 
+	
+	float scale = (float) getWidth();		
+	canvas.save(Canvas.MATRIX_SAVE_FLAG);
+	canvas.scale(scale, scale);
+	canvas.rotate(angle - 135, 0.5f, 0.5f);	
+	canvas.drawPath(handPath, handPaint);
+	canvas.restore();
+	
+	if(isdef title){		
+		mTextPaint.setTextSize(getWidth()/20);
+		canvas.drawText(title, canvas.getWidth()/2, canvas.getHeight()/5*4, mTextPaint);
+	}
+
+	if(angle < handAngle){
+		angle += 6f;
+		if(angle > handAngle){
+			angle = handAngle;
+		}
+		invalidate();
+	} else if(angle > handAngle){
+		angle -= 6f;
+		if(angle < handAngle){
+			angle = handAngle;
+		}
+		invalidate();
+	}
+	
+	//prevent last-value-out 
+	return null;
+};

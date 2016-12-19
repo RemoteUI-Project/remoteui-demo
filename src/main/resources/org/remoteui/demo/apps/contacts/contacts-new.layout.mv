@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	@code{
+	isMobile = client.viewportWidthDp < 500;
+	isTablet =
+	client.viewportWidthDp > 700;
+	margin= isMobile ? 16 : 24;
+	cardWidth=client.viewportWidthDp > 610 ? '610dp' :
+	''+client.viewportWidthDp+'dp';
+	isDe = (client.locale.language == 'de');
+	}
+	<style> 
+		.card {
+			paddingTop:5dp;
+			paddingBottom:10dp;
+			@if{!isTablet}
+				backgroundColor: white;
+				width:@{client.viewportWidthDp};
+			@else{}
+				width:620dp;
+				marginRight:4dp;
+				marginLeft:4dp;
+   				backgroundImage:img/card-background.n.svg;
+			@end{}
+		}
+		.itemText{textColor:#252525; fontSize:18;}
+		.itemSubText{textColor:#747474; marginTop:2dp;}
+		.icon1{
+			width:18dp;
+			height:18dp;
+			marginRight:14dp;
+			verticalAlign:center;
+		}
+		.icon2{
+			padding:16dp;
+			width:48dp;
+			height:48dp;
+			verticalAlign:center;
+			backgroundColor:transparent;
+		}
+		.itemLine{
+			minHeight:52dp;
+			marginLeft:@{isMobile?16:56}dp;
+			marginRight:@{isMobile?8:24}dp;
+			width:fill_parent;
+		}
+		.selectBox{
+			marginLeft:@{margin + 32}dp;
+			height:40dp;
+		}
+		.editText1{
+			verticalAlign:center;
+			marginLeft:@{margin}dp;
+			width:0dp;
+			layoutWeight:1;
+		}
+	</style>
+	<!-- OptionsMenu>
+		<MenuItem title="Search" icon="img/ic_delete.svg" />
+		<MenuItem title="Join" />
+		<MenuItem title="Discard changes" />
+	</OptionsMenu -->
+
+	<ScrollView width="fill_parent" height="fill_parent"
+		backgroundColor="#f4f4f4">
+		<LinearLayout width="@{cardWidth}" horizontalAlign="center"
+			orientation="vertical" backgroundColor="#f4f4f4" height="fill_parent">
+
+			<!-- Contact Card -->
+			<LinearLayout class="card" orientation="vertical" width="fill_parent">
+				<LinearLayout orientation="vertical" class="itemLine"
+					marginTop="24dp" marginBottom="12dp">
+					<TextView class="itemText" text="Online @{isDe?'Kontakt':'contact'}" />
+					<TextView class="itemSubText"
+						text="@{isDe?'ihreID':'yourID'}@online-service.com" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<ImageView class="icon1" href="img/ic_person.svg" />
+					<EditTextView class="editText1" hint="Name" />
+					<ImageButton class="icon2" href="img/ic_keyboard_arrow_down.svg" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<View class="icon1" />
+					<EditTextView class="editText1"
+						hint="@{isDe?'Phonetischer Name':'Phonetic name'}" />
+					<ImageButton class="icon2" href="img/ic_keyboard_arrow_down.svg" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<View class="icon1" />
+					<EditTextView class="editText1" hint="@{isDe?'Spitzname':'Nickname'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" verticalAlign="top"
+						href="img/ic_photo_camera.svg" />
+					<ImageView marginLeft="@{margin+4}dp" width="70dp"
+						height="70dp" backgroundColor="lightgray" href="img/ic_person_white.svg"
+						padding="20dp" />
+					<Button text="@{isDe?'ÄNDERN':'CHANGE'}" backgroundColor="transparent"
+						minWidth="100dp" marginLeft="8dp" />
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_call.svg" />
+					<EditTextView class="editText1" hint="@{isDe?'Telefon':'Phone'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<SelectBox class="selectBox">
+						<Item>@{isDe?'Mobil':'Mobile'}</Item>
+						<Item>Work</Item>
+						<Item>Home</Item>
+						<Item>Main</Item>
+						<Item>Work Fax</Item>
+						<Item>Home Fax</Item>
+						<Item>Pager</Item>
+						<Item>Other</Item>
+						<Item>Custom</Item>
+					</SelectBox>
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_email.svg" />
+					<EditTextView class="editText1" hint="@{isDe?'E-Mail':'Email'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<SelectBox class="selectBox">
+						<Item>@{isDe?'Privat':'Home'}</Item>
+						<Item>Work</Item>
+						<Item>Other</Item>
+						<Item>Custom</Item>
+					</SelectBox>
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_place.svg" />
+					<EditTextView class="editText1" hint="Address@{isDe?'e'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<SelectBox class="selectBox">
+						<Item>@{isDe?'Privat':'Home'}</Item>
+						<Item>Work</Item>
+						<Item>Other</Item>
+						<Item>Custom</Item>
+					</SelectBox>
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_insert_invitation.svg" />
+					<EditTextView class="editText1" hint="@{isDe?'Datum':'Date'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<SelectBox class="selectBox">
+						<Item>@{isDe?'Geburtstag':'Birthday'}</Item>
+						<Item>Anniversary</Item>
+						<Item>Other</Item>
+						<Item>Customised</Item>
+					</SelectBox>
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_business.svg" />
+					<EditTextView class="editText1" hint="@{isDe?'Firma':'Company'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<View class="icon1" />
+					<EditTextView verticalAlign="center" marginLeft="@{margin}"
+						width="0dp" layoutWeight="1" hint="@{isDe?'Titel':'Title'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_comment.svg" />
+					<EditTextView class="editText1" hint="@{isDe?'Notizen':'Notes'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_chat.svg" />
+					<EditTextView class="editText1" hint="IM" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<SelectBox class="selectBox">
+						<Item>AIM</Item>
+						<Item>Windows Live</Item>
+						<Item>Yahoo</Item>
+						<Item>Skype</Item>
+						<Item>QQ</Item>
+						<Item>Hangouts</Item>
+						<Item>ICQ</Item>
+						<Item>Jabber</Item>
+						<Item>Custom</Item>
+					</SelectBox>
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_dialer_sip.svg" />
+					<EditTextView class="editText1" hint="SIP" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_group.svg" />
+					<SelectBox class="selectBox" layoutWeight="1" marginLeft="@{margin}">
+						<Item>@{isDe?'Gruppenname':'Group name'}</Item>
+						<Item>Friends</Item>
+						<Item>Family</Item>
+						<Item>Coworkers</Item>
+						<Item>Create new group</Item>
+					</SelectBox>
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_public.svg" />
+					<EditTextView class="editText1" hint="@{isDe?'Webseite':'Website'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine" marginTop="24dp">
+					<ImageView class="icon1" href="img/ic_shuffle.svg" />
+					<EditTextView class="editText1"
+						hint="@{isDe?'Beziehung':'Relationship'}" />
+					<View class="icon2" />
+				</LinearLayout>
+				<LinearLayout class="itemLine">
+					<SelectBox class="selectBox">
+						<Item>@{isDe?'Assistent':'Assistant'}</Item>
+						<Item>Brother</Item>
+						<Item>Child</Item>
+						<Item>Domestic Partner</Item>
+						<Item>Father</Item>
+						<Item>Friend</Item>
+						<Item>Manager</Item>
+						<Item>Mother</Item>
+						<Item>Parent</Item>
+						<Item>Partner</Item>
+						<Item>Referred by</Item>
+						<Item>Relative</Item>
+						<Item>Sister</Item>
+						<Item>Spouse</Item>
+						<Item>Custom</Item>
+					</SelectBox>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</RemoteUILayout>

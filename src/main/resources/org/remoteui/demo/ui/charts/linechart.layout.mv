@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Line Charts" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<LinearLayout width="fill_parent" height="fill_parent"
+			orientation="vertical">
+			<LineChart width="fill_parent" height="0dp" layoutWeight="1"
+				description="Stuttgart" descriptionColor="blue" data="#{data}"
+				descriptionTextSize="16" highlightEnabled="false" animateYDuration="500" />
+			<Button marginTop="10dp" text="@{m('linechart.randomizeDataButton')}"
+				width="fill_parent" height="wrap_content" onClick="#{onButtonClicked()}" />
+		</LinearLayout>
+	</LinearLayout>
+</RemoteUILayout>

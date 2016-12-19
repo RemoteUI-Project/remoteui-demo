@@ -1,0 +1,27 @@
+Button {
+	layoutWeight: 1;
+	width: 0dp;
+	height: fill_parent;
+	backgroundColor: #222222;
+	textColor: white;
+	margin: 2dp;
+}
+
+.scientific>Button {
+	fontSize: 20;
+}
+
+.basic>Button {
+	fontSize: 32;
+	backgroundColor: #777;
+}
+
+.special {
+	backgroundColor: #990000;
+	fontSize: 32;
+}
+
+.line {
+	layoutWeight: 1;
+	width: fill_parent;
+}

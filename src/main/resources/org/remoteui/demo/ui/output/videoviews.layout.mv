@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		backgroundColor="white" height="fill_parent">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="VideoViews" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<LinearLayout width="fill_parent" height="fill_parent"
+			orientation="vertical">
+
+			@code{
+			videoHeight = (int) (client.viewportWidthPx * 9 / 16 ) + 'px';
+			}
+
+			<VideoView width="fill_parent" height="@{videoHeight}"
+				autoPlay="true"
+				videoUrl="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_640x360.m4v" />
+			<TextView fontSize="20" height="fill_parent" width="fill_parent"
+				padding="2mm" backgroundColor="lightgray" textColor="darkgray">
+				<text>
+<![CDATA[
+<p>Video Views play Video content from a given URL.</p>]]></text>
+			</TextView>
+		</LinearLayout>
+	</LinearLayout>
+</RemoteUILayout>

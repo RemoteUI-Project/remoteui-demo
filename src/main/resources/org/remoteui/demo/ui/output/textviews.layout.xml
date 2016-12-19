@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="TextViews" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout width="fill_parent" height="fill_parent"
+				orientation="vertical">
+				<LinearLayout orientation="vertical" width="fill_parent"
+					padding="2mm" height="wrap_content">
+					<TextView text="Simple TextView" width="fill_parent" />
+					<TextView text="TextView with FontSize=20" fontSize="20"
+						width="fill_parent" />
+					<TextView text="TextView with textColor=red" textColor="red"
+						width="fill_parent" />
+					<TextView text="TextView with textColor=hsb(200,100,80)"
+						textColor="hsb(200,100,80)" width="fill_parent" />
+					<TextView
+						text="TextView with backgroundColor=hsb(200,100,100) and padding=1mm"
+						backgroundColor="hsb(200,100,100)" padding="2mm" width="fill_parent" />
+					<TextView backgroundColor="darkgray" textColor="white"
+						padding="1mm" fontSize="20" width="fill_parent">
+						<!-- http://daniel-codes.blogspot.de/2011/04/html-in-textviews.html -->
+						<text>
+<![CDATA[
+TextView with <tt>simple</tt> <font color="red">HTML-formatting</font> for <b>bold</b>, <i>italic</i>,
+<u>underlined</u> and more:
+<h1>Heading1</h1>
+<a href="http://www.remoteui.org">RemoteUI.org</a>
+<h2>Heading2</h2>
+]]>
+					</text>
+					</TextView>
+					<TextView text="Text with left alignment"
+						textHorizontalAlign="left" width="fill_parent" />
+					<TextView text="Text with right alignment"
+						textHorizontalAlign="right" width="fill_parent" />
+					<TextView text="Text with center alignment"
+						textHorizontalAlign="center" width="fill_parent" />
+					<TextView text="Text with vertical top alignment" margin="1dp"
+						textHorizontalAlign="center" textVerticalAlign="top" height="50dp"
+						backgroundColor="gray" textColor="white" width="fill_parent" />
+					<TextView text="Text with vertical bottom alignment"
+						margin="1dp" textHorizontalAlign="center" textVerticalAlign="bottom"
+						height="50dp" backgroundColor="gray" textColor="white" width="fill_parent" />
+					<TextView text="Text with vertical center alignment"
+						margin="1dp" textHorizontalAlign="center" textVerticalAlign="center"
+						height="50dp" backgroundColor="gray" textColor="white" width="fill_parent" />
+				</LinearLayout>
+				<TextView padding="2mm" backgroundColor="lightgray"
+					fontSize="20" height="wrap_content" textColor="darkgray">
+					<text>
+<![CDATA[TextViews can be styled in different ways:<br/>
+- Different attributes like <b>textColor</b> and <b>font*</b> attributes<br/>
+- Simple <b>HTML</b> elements emedded in the text (e.g. p, br, b, i, font, sub, sup, u and more)]]>
+						</text>
+				</TextView>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

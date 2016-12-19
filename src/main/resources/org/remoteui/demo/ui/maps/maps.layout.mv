@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent">
+		<include href="../demos-header.layout.xml" />
+		<ToolBar width="fill_parent" backgroundColor="ruilight">
+			<TextView text="Maps" fontSize="20" textColor="white"
+				padding="5dp" />
+			<OptionsMenu>
+				<MenuItem title="Goto Colosseum Rome" onClick="#{onOptionsMenuItemSelected(0)}" />
+				<MenuItem title="Goto Notre Dame, Paris" onClick="#{onOptionsMenuItemSelected(1)}" />
+				<MenuItem title="Goto Edinburgh Castle" onClick="#{onOptionsMenuItemSelected(2)}" />
+				<MenuItem title="Goto Big Ben, London" onClick="#{onOptionsMenuItemSelected(3)}" />
+				<MenuItem title="Statue of Liberty, New York" onClick="#{onOptionsMenuItemSelected(4)}" />
+				<MenuItem title="Goto Stuttgart Media University" onClick="#{onOptionsMenuItemSelected(5)}" />
+				<MenuItem title="Goto UWS" onClick="#{onOptionsMenuItemSelected(6)}" />
+			</OptionsMenu>
+		</ToolBar>
+		<LinearLayout width="fill_parent" height="fill_parent"
+			orientation="vertical">
+
+			<MapView longitude="#{centeredMarker.longitude}" latitude="#{centeredMarker.latitude}"
+				width="fill_parent" height="0dp" layoutWeight="1" compassEnabled="true"
+				locationButtonEnabled="true" cameraTilt="90" cameraBearing="0"
+				mapType="normal" zoomControlsEnabled="true" zoomLevel="17"
+				rotateGesturesEnabled="true" scrollGesturesEnabled="true"
+				tiltGesturesEnabled="true" markers="#{markers}" animate="true"
+				buildingsEnabled="true" trafficEnabled="true" indoorEnabled="true"
+				onMarkerClick="#{onMarkerClick(markerID)}" />
+			<TextView text="#{centeredMarker.title}" fontSize="18"
+				textColor="white" backgroundColor="#555" padding="5dp" width="fill_parent"
+				textHorizontalAlign="center" />
+		</LinearLayout>
+	</LinearLayout>
+</RemoteUILayout>

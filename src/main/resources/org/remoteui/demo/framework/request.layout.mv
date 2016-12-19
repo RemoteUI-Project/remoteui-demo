@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<style> .content > TextView{fontSize:18; padding:10dp}</style>
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../ui/demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Request Parameters"
+			fontSize="20" textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout class="content" orientation="vertical"
+				width="fill_parent" height="fill_parent">
+				<TextView text="This message is taken from an URL query parameter:" />
+				<TextView text="#{message}" />
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout width="fill_parent" backgroundColor="darkgray"
+		padding="10dp">
+		<TextView width="0dp" height="wrap_content" text="RemoteUI Widgets"
+			layoutWeight="1" fontSize="24" textColor="white" paddingTop="5dp" />
+		<ImageView width="45dp" height="45dp"
+			href="classpath:/org/remoteui/demo/images/remoteui-logo.svg" />
+	</LinearLayout>
+</RemoteUILayout>

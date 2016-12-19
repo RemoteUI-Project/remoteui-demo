@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Pie Charts" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<LinearLayout width="fill_parent" height="fill_parent"
+			orientation="vertical">
+			<PieChart width="fill_parent" height="0dp" layoutWeight="1"
+				descriptionTextSize="16" centerTextSize="20" centerText="#{selectedItem}"
+				description="Population by age" data="#{data}" usePercentValues="false"
+				animateXDuration="600" legendDisabled="true" />
+			<SelectBox width="fill_parent" height="wrap_content"
+				onItemSelected="#{onItemSelected(item)}" items="#{selectBoxItems}" />
+		</LinearLayout>
+	</LinearLayout>
+</RemoteUILayout>

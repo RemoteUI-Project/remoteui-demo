@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+@code{
+fontSize=15
+}
+
+@declare{'line'}
+<TextView padding="10dp" text="@{text}" fontSize="@{fontSize}"
+	textColor="black" backgroundColor="@{even ? 'white':'lightgray'}"
+	width="fill_parent" />
+@end{}
+
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<ScrollView width="fill_parent" height="fill_parent"
+		backgroundColor="white">
+		<LinearLayout orientation="vertical" width="fill_parent"
+			height="wrap_content">
+			<TextView padding="10dp" text="Client Information"
+				textInnerShadow="0.5dp 0.5dp 0.5dp black" fontSize="@{client.viewportWidthDp/10}"
+				textColor="white" fontWeight="bold" backgroundColor="ruilight"
+				width="fill_parent" />
+			@code{ i=0 }
+			@foreach{entry : client.entrySet()}
+			@includeNamed{'line'; text='client.'+entry.key+'='+entry.value.toString(); even=i%2==0}
+			@code{ ++i }
+			@end{}
+		</LinearLayout>
+	</ScrollView>
+</RemoteUILayout>
