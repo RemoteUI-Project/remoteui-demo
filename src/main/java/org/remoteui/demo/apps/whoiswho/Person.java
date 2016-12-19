@@ -1,14 +1,24 @@
-/**
- * Created on 03.06.2013
- *
- * © 2013 Daniel Thommes, All Rights Reserved
- */
+/*******************************************************************************
+ * Copyright 2016 Daniel Thommes
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
 package org.remoteui.demo.apps.whoiswho;
 
 import java.util.Date;
 
 /**
- *
+ * Person entity for the WhoIsWho demo app
  *
  * @author Daniel Thommes
  */
@@ -45,205 +55,253 @@ public class Person {
 	public String getImageUrl() {
 		return imageUrl;
 	}
+
 	/**
-	 * @param imageUrl the imageUrl to set
+	 * @param imageUrl
+	 *            the imageUrl to set
 	 */
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
 	/**
 	 * @return the male
 	 */
 	public boolean isMale() {
 		return male;
 	}
+
 	/**
-	 * @param male the male to set
+	 * @param male
+	 *            the male to set
 	 */
 	public void setMale(boolean male) {
 		this.male = male;
 	}
+
 	/**
 	 * @return the firstName
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
+
 	/**
-	 * @param firstName the firstName to set
+	 * @param firstName
+	 *            the firstName to set
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	/**
 	 * @return the lastName
 	 */
 	public String getLastName() {
 		return lastName;
 	}
+
 	/**
-	 * @param lastName the lastName to set
+	 * @param lastName
+	 *            the lastName to set
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	/**
 	 * @return the company
 	 */
 	public String getCompany() {
 		return company;
 	}
+
 	/**
-	 * @param company the company to set
+	 * @param company
+	 *            the company to set
 	 */
 	public void setCompany(String company) {
 		this.company = company;
 	}
+
 	/**
 	 * @return the address
 	 */
 	public Address getAddress() {
 		return address;
 	}
+
 	/**
-	 * @param address the address to set
+	 * @param address
+	 *            the address to set
 	 */
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
 	/**
 	 * @return the department
 	 */
 	public String getDepartment() {
 		return department;
 	}
+
 	/**
-	 * @param department the department to set
+	 * @param department
+	 *            the department to set
 	 */
 	public void setDepartment(String department) {
 		this.department = department;
 	}
+
 	/**
 	 * @return the phone
 	 */
 	public String getPhone() {
 		return phone;
 	}
+
 	/**
-	 * @param phone the phone to set
+	 * @param phone
+	 *            the phone to set
 	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 	/**
 	 * @return the mobile
 	 */
 	public String getMobile() {
 		return mobile;
 	}
+
 	/**
-	 * @param mobile the mobile to set
+	 * @param mobile
+	 *            the mobile to set
 	 */
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
+
 	/**
 	 * @return the email
 	 */
 	public String getEmail() {
 		return email;
 	}
+
 	/**
-	 * @param email the email to set
+	 * @param email
+	 *            the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	/**
 	 * @return the locationCode
 	 */
 	public String getLocationCode() {
 		return locationCode;
 	}
+
 	/**
-	 * @param locationCode the locationCode to set
+	 * @param locationCode
+	 *            the locationCode to set
 	 */
 	public void setLocationCode(String locationCode) {
 		this.locationCode = locationCode;
 	}
+
 	/**
 	 * @return the contactPerson
 	 */
 	public String getContactPerson() {
 		return contactPerson;
 	}
+
 	/**
-	 * @param contactPerson the contactPerson to set
+	 * @param contactPerson
+	 *            the contactPerson to set
 	 */
 	public void setContactPerson(String contactPerson) {
 		this.contactPerson = contactPerson;
 	}
+
 	/**
 	 * @return the contactPerson2
 	 */
 	public String getContactPerson2() {
 		return contactPerson2;
 	}
+
 	/**
-	 * @param contactPerson2 the contactPerson2 to set
+	 * @param contactPerson2
+	 *            the contactPerson2 to set
 	 */
 	public void setContactPerson2(String contactPerson2) {
 		this.contactPerson2 = contactPerson2;
 	}
+
 	/**
 	 * @return the costUnit
 	 */
 	public String getCostUnit() {
 		return costUnit;
 	}
+
 	/**
-	 * @param costUnit the costUnit to set
+	 * @param costUnit
+	 *            the costUnit to set
 	 */
 	public void setCostUnit(String costUnit) {
 		this.costUnit = costUnit;
 	}
+
 	/**
 	 * @return the userId
 	 */
 	public String getUserId() {
 		return userId;
 	}
+
 	/**
-	 * @param userId the userId to set
+	 * @param userId
+	 *            the userId to set
 	 */
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+
 	/**
 	 * @return the areaOfWork
 	 */
 	public String getAreaOfWork() {
 		return areaOfWork;
 	}
+
 	/**
-	 * @param areaOfWork the areaOfWork to set
+	 * @param areaOfWork
+	 *            the areaOfWork to set
 	 */
 	public void setAreaOfWork(String areaOfWork) {
 		this.areaOfWork = areaOfWork;
 	}
+
 	/**
 	 * @return the lastUpdated
 	 */
 	public Date getLastUpdated() {
 		return lastUpdated;
 	}
+
 	/**
-	 * @param lastUpdated the lastUpdated to set
+	 * @param lastUpdated
+	 *            the lastUpdated to set
 	 */
 	public void setLastUpdated(Date lastUpdated) {
 		this.lastUpdated = lastUpdated;
 	}
-
-
 
 }

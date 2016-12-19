@@ -1,8 +1,18 @@
-/** 
- * Created on 06.05.2015 
+/*******************************************************************************
+ * Copyright 2016 Daniel Thommes
  * 
- * © 2015 Daniel Thommes, All Rights Reserved
- */
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
 package org.remoteui.demo.framework;
 
 import java.text.DateFormat;
@@ -18,8 +28,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
 
 /**
  * Demonstrates the use of internationalization features. Please see
- * /WEB-INF/remoteui/framework/i18n.layout.mv and
- * src/main/resources/messages*.properties as well.
+ * i18n.layout.mv and src/main/resources/messages*.properties as well.
  * 
  * @see https://docs.oracle.com/javase/tutorial/i18n/format/messageFormat.html
  * @see http
@@ -35,7 +44,7 @@ public class I18nActivity extends WebActivity {
 	private NumberFormat numberFormat;
 
 	/**
-	 * This method is called by the Spring container as per configuration.
+	 * This method is called by the Spring container.
 	 */
 	@PostConstruct
 	public void init() {

@@ -1,8 +1,18 @@
-/**
- * Created on 21.11.2012
- *
- * © 2012 Daniel Thommes, All Rights Reserved
- */
+/*******************************************************************************
+ * Copyright 2016 Daniel Thommes
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
 package org.remoteui.demo.apps.whoiswho;
 
 import java.util.Date;
@@ -12,11 +22,11 @@ import org.remoteui.protocol.cmd.OpenUriCmd;
 import org.remoteui.webapp.WebActivity;
 
 /**
- *
+ * Simple WhoIsWho demo app
  *
  * @author Daniel Thommes
  */
-@Activity(id="whoiswho", layout="who-is-who.layout.mv")
+@Activity(id = "whoiswho", layout = "who-is-who.layout.mv")
 public class WhoIsWhoActivity extends WebActivity {
 
 	public Person person;
@@ -82,11 +92,11 @@ public class WhoIsWhoActivity extends WebActivity {
 
 	public void onLocate() {
 		Address address = person.getAddress();
-		// "geo:48.74200,9.10076?q=48.74200,9.10076(HdM Stuttgart, Nobelstr. 10, 70569 Stuttgart, Raum 151)"
-		String geoUri = "geo:" + address.getLongitude() + ","
-				+ address.getLatitude() + "?q=" + +address.getLongitude() + ","
-				+ address.getLatitude() + "(" + person.getCompany() + ", "
-				+ address.getStreet() + " " + address.getStreetNumber() + ", "
+		// "geo:48.74200,9.10076?q=48.74200,9.10076(HdM Stuttgart, Nobelstr. 10,
+		// 70569 Stuttgart, Raum 151)"
+		String geoUri = "geo:" + address.getLongitude() + "," + address.getLatitude() + "?q="
+				+ +address.getLongitude() + "," + address.getLatitude() + "(" + person.getCompany()
+				+ ", " + address.getStreet() + " " + address.getStreetNumber() + ", "
 				+ address.getZipCode() + " " + address.getTown() + ")";
 		System.out.println(geoUri);
 		sendCommand(new OpenUriCmd(geoUri));

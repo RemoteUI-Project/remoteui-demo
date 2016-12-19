@@ -1,12 +1,22 @@
-/**
- * Created on 03.06.2013
- *
- * © 2013 Daniel Thommes, All Rights Reserved
- */
+/*******************************************************************************
+ * Copyright 2016 Daniel Thommes
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
 package org.remoteui.demo.apps.whoiswho;
 
 /**
- *
+ * Address entity for the WhoIsWho demo app
  *
  * @author Daniel Thommes
  */
@@ -29,7 +39,8 @@ public class Address {
 	}
 
 	/**
-	 * @param longitude the longitude to set
+	 * @param longitude
+	 *            the longitude to set
 	 */
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
@@ -43,7 +54,8 @@ public class Address {
 	}
 
 	/**
-	 * @param latitude the latitude to set
+	 * @param latitude
+	 *            the latitude to set
 	 */
 	public void setLatitude(double latitude) {
 		this.latitude = latitude;
