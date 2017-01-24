@@ -197,6 +197,11 @@
 
 			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
 
+			<Button text="Geolocation" width="fill_parent"
+				backgroundColor="white" onClick="#{activity:framework:geolocation}" />
+
+			<View backgroundColor="lightgray" height="1px" width="fill_parent" />
+
 			<!-- Button text="Request Parameters" width="fill_parent"
 				backgroundColor="white" onClick="#{activity:framework:request}" />
 

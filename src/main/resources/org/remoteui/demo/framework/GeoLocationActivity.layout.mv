@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2016 Daniel Thommes
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+      http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<RemoteUILayout xmlns="urn:remoteui:org:layout">
+	<style> .content > TextView{fontSize:18; padding:10dp}</style>
+	<LinearLayout orientation="vertical" width="fill_parent"
+		height="fill_parent" backgroundColor="white">
+		<include href="../ui/demos-header.layout.xml" />
+		<TextView width="fill_parent" text="Geolocation" fontSize="20"
+			textColor="white" backgroundColor="ruilight" padding="5dp" />
+		<ScrollView width="fill_parent" height="fill_parent">
+			<LinearLayout class="content" orientation="vertical"
+				width="fill_parent" height="fill_parent">
+				<TextView text="Your Location:" width="fill_parent"
+					textHorizontalAlign="center" fontSize="20" />
+				<TextView text="#{location}" width="fill_parent"
+					textHorizontalAlign="center" />
+				<Button text="Get Location by Radio" onClick="#{getLocation(false)}"
+					textHorizontalAlign="center" />
+				<Button text="Get Location by GPS" onClick="#{getLocation(true)}"
+					textHorizontalAlign="center" />
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</RemoteUILayout>
