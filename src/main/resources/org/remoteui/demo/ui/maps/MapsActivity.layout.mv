@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Copyright 2016 Daniel Thommes
-  
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-  
-      http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
+<!-- Copyright 2016 Daniel Thommes Licensed under the Apache License, Version 
+	2.0 (the "License"); you may not use this file except in compliance with 
+	the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+	Unless required by applicable law or agreed to in writing, software distributed 
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+	the specific language governing permissions and limitations under the License. -->
 <RemoteUILayout xmlns="urn:remoteui:org:layout">
 	<LinearLayout orientation="vertical" width="fill_parent"
 		height="fill_parent">
@@ -39,9 +31,12 @@
 				locationButtonEnabled="true" cameraTilt="90" cameraBearing="0"
 				mapType="normal" zoomControlsEnabled="true" zoomLevel="17"
 				rotateGesturesEnabled="true" scrollGesturesEnabled="true"
-				tiltGesturesEnabled="true" markers="#{markers}" animate="true"
+				tiltGesturesEnabled="true" markerItems="#{markers}" animate="true"
 				buildingsEnabled="true" trafficEnabled="true" indoorEnabled="true"
-				onMarkerClick="#{onMarkerClick(markerID)}" />
+				onMarkerClick="#{onMarkerClick(markerID)}">
+				<MarkerTemplate longitude="#{item.longitude}" title="#{item.title}"
+					latitude="#{item.latitude}" />
+			</MapView>
 			<TextView text="#{centeredMarker.title}" fontSize="18"
 				textColor="white" backgroundColor="#555" padding="5dp" width="fill_parent"
 				textHorizontalAlign="center" />

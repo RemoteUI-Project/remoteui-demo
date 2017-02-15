@@ -29,7 +29,7 @@ import org.remoteui.webapp.WebActivity;
  *
  * @author Daniel Thommes
  */
-@Activity(id = "widget:maps", layout = "maps.layout.mv")
+@Activity(id = "widget:maps")
 public class MapsActivity extends WebActivity {
 
 	public List<RuiMarker> markers = new ArrayList<RuiMarker>();

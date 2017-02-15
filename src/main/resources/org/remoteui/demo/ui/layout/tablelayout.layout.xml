@@ -21,7 +21,7 @@
 	</style>
 	<LinearLayout orientation="vertical" width="fill_parent"
 		height="fill_parent" backgroundColor="white">
-		<include href="classpath:/org/remoteui/demo/ui/demos-header.layout.xml" />
+		<include href="../demos-header.layout.xml" />
 		<TextView width="fill_parent" text="TableLayout" fontSize="20"
 			textColor="white" backgroundColor="ruilight" padding="5dp" />
 		<ScrollView width="fill_parent" height="fill_parent">

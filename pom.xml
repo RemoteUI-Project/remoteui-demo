@@ -5,7 +5,7 @@
 
 	<groupId>org.remoteui</groupId>
 	<artifactId>remoteui-demo</artifactId>
-	<version>0.26.2-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>remoteui-demo</name>
@@ -38,24 +38,12 @@
 		<dependency>
 			<groupId>org.remoteui</groupId>
 			<artifactId>remoteui-spring-boot</artifactId>
-			<version>0.26.2-SNAPSHOT</version>
+			<version>1.0.0</version>
 			<!-- exclude some stuff to make the jar smaller -->
 			<exclusions>
 				<exclusion>
 					<groupId>org.hibernate</groupId>
 					<artifactId>hibernate-validator</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-annotations</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-databind</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
