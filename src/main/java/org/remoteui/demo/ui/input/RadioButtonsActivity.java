@@ -44,6 +44,7 @@ public class RadioButtonsActivity extends WebActivity {
 
 	public void reset() {
 		singleButtonChecked = false;
+		firePropertyChanged("singleButtonChecked");
 	}
 
 	public String getDecisionText() {

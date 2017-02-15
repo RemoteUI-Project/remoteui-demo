@@ -8,7 +8,7 @@ package org.remoteui.demo.framework;
 import org.remoteui.annotation.Activity;
 import org.remoteui.webapp.WebActivity;
 import org.remoteui.webapp.plugin.geolocation.GeoLocation;
-import org.remoteui.webapp.plugin.geolocation.GeolocationService;
+import org.remoteui.webapp.plugin.geolocation.GeolocationPlugin;
 
 /**
  * 
@@ -28,7 +28,7 @@ public class GeoLocationActivity extends WebActivity {
 
 	public void getLocation(boolean useGps) {
 		firePropertyChanged("location");
-		getWebApp().getPlugin(GeolocationService.class).getGeolocation(useGps, 10000, location -> {
+		getWebApp().getPlugin(GeolocationPlugin.class).getGeolocation(useGps, 10000, location -> {
 			this.location = location;
 			firePropertyChanged("location");
 		});
