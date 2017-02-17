@@ -5,7 +5,7 @@
 
 	<groupId>org.remoteui</groupId>
 	<artifactId>remoteui-demo</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>remoteui-demo</name>
@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>org.remoteui</groupId>
 			<artifactId>remoteui-spring-boot</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1-SNAPSHOT</version>
 			<!-- exclude some stuff to make the jar smaller -->
 			<exclusions>
 				<exclusion>
